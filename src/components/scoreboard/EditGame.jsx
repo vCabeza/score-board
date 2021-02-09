@@ -59,6 +59,7 @@ class EditGame extends Component {
                 {this.props.selectedGame.homeTeam.teamName} Score (Home)
               </Form.Label>
               <Form.Control
+                required
                 type='number'
                 placeholder='Score'
                 value={this.state.game.homeTeam.teamScore}
@@ -71,6 +72,7 @@ class EditGame extends Component {
                 {this.props.selectedGame.awayTeam.teamName} Score (Away)
               </Form.Label>
               <Form.Control
+                required
                 type='number'
                 placeholder='Score'
                 value={this.state.game.awayTeam.teamScore}

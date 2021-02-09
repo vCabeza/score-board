@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
-import { GrEdit, GrAdd } from 'react-icons/gr';
+import { GrEdit, GrAdd, GrTrash } from 'react-icons/gr';
 import GameModal from './GameModal';
 import * as actions from '../../actions';
 
@@ -24,7 +24,7 @@ class GamesList extends Component {
     return (
       <>
         <Row>
-          <Col xs={{ offset: 10 }} lg={{ offset: 7 }}>
+          <Col xs={{ offset: 10 }} lg={{ offset: 8 }}>
             <GrAdd onClick={() => this.chatVisibilityHandler()} />
           </Col>
         </Row>
@@ -34,11 +34,11 @@ class GamesList extends Component {
               {game.homeTeam.teamName} ({game.homeTeam.teamScore}) -{' '}
               {game.awayTeam.teamName} ({game.awayTeam.teamScore})
             </Col>
-            <Col xs='2'>
+            <Col xs='2' lg='1'>
               <GrEdit onClick={() => this.chatVisibilityHandler(game)} />
             </Col>
-            <Col xs='2'>
-              <GrEdit onClick={() => this.props.finishGame(game.id)} />
+            <Col xs='2' lg='1'>
+              <GrTrash onClick={() => this.props.finishGame(game.id)} />
             </Col>
           </Row>
         ))}
